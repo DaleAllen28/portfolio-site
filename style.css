@@ -1,0 +1,209 @@
+/* Use CSS variables to declare global colors by using the css root selector which matches the documents root element,
+therefore giving access to the color variables globally*/
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    /*SITE COLOR PALLETTE*/
+    --coolgray: #EDEDE9;
+    --graybrown: #D6CCC2;
+    --lightbrown: #F5EBE0;
+    --midbrown: #E3D5CA;
+    --brown: #D5BDAF;
+
+    /*Text Pallete*/
+    --pink: #fcb6f0;
+    --black: #000000;
+}
+
+/*Global font-family*/
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*Remove outer margin of body*/
+body {
+    margin:0;
+    
+}
+
+body,html {
+    height: 100%;
+    /*background: linear-gradient(var(--coolgray), var(--midbrown), var(--graybrown)); */
+}
+/*GRID STYLING*/
+.grid-container {
+    /*Allow for grid display*/
+    display: grid;
+    /*6 column area*/
+    grid-template-areas:"navbar navbar navbar navbar navbar navbar"
+                        ". header header header . ."
+                        ". . . . . ."
+                        ". . . content content ."
+                        "gallery gallery gallery gallery gallery gallery"
+                        "profilepic profilepic form form . ." ;
+    
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    /*row heights*/
+    grid-template-rows:10% 80% 10% 100% 100% 100%; /*10% empty row allows centering of title*/
+    /*padding: 2%;*/
+    gap: 1% 1%;
+    /*justify-content: space-between;*/
+    margin:0%;
+    height: 100%;
+  }
+
+  .grid-item {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  /*HEADER GRID*/
+  .item1 {
+      grid-area: header;
+      margin:0;
+      padding:0;
+      /*Aligns title centrally vertically */
+      align-self: center;
+      text-align: left;
+  }
+  .item1 div h1 {
+      margin:0%;
+      padding:0%;
+      font-size: 5rem;
+  }
+  .item1 div h2 {
+      margin-top: 3%;
+
+  }
+
+  .item1 div hr {
+      width:66%;
+      float:left;
+      height: 0.1rem;
+      color:#000000; 
+      margin:auto;
+  }
+
+/*NAVBAR GRID*/
+  .item2 {
+      grid-area: navbar;
+      width: 100%;
+      display: inline-flex;
+      position:fixed;
+      opacity: 100%;
+  }
+
+  .item3 {
+      grid-area: content;
+  }
+
+  .item3 p {
+      font-size: 1.2rem;
+      max-width: fit-content;
+      text-align: justify;
+  }
+
+  .item4 {
+      grid-area: gallery;
+  }
+
+  .item9 {
+      grid-area: footer;
+  }
+
+  .item10 {
+      grid-area: profilepic;
+      display:grid;
+      border: 0 none;
+      margin:0;
+      padding:0;
+      justify-items: center;
+  }
+
+  .item10 img {
+      width: 50%;
+      border-radius: 100%;
+      padding: 0;
+      margin-top: 5%;
+  }
+
+.navItem { 
+    padding: 1%;
+    width:100%;
+    height: auto;
+    align-self: center;
+    background-color: #000000;
+    font-size: 1rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--brown);
+    transition: 0.2s ease-in;
+}
+.navItem:hover {
+    background-color: var(--lightbrown);
+    box-shadow: 0 0 10px var(--pink);
+    color:#000000;
+}
+
+.item9 {
+    grid-area: form;
+}
+
+/*FORM*/
+
+#contactform fieldset {
+    display:grid;
+    border-radius: 1rem;
+    text-align: left;
+    border:none;
+}
+
+#contactform fieldset >* {
+    border-radius: 1rem;
+    border: none;
+    justify-self: left;
+    width:70%;
+}
+
+#contactform fieldset > input {
+    padding: 2.5%;
+    border: 0.1rem solid var(--brown);
+    background-color: rgb(255, 255, 255);    
+}
+
+#contactform fieldset > input:focus-visible {
+    border: 0.1rem solid var(--pink);
+}
+
+#contactform fieldset > textarea {
+    padding: 2%;
+    height:100%;
+    border: 0.1rem solid var(--brown);
+    background-color: white;
+}
+
+/*Submit button background*/
+#contactform fieldset input:last-child {
+    background: var(--brown);
+}
+
+#submit {
+    margin-top: 2%;
+    transition-duration: 0.3s; /*For glow/hover transition*/
+}
+/*pink glow on hover of submit*/
+#submit:hover {
+    box-shadow: 0 0 5px var(--pink);
+}
+
+/*GALLERY GRID*/
+/*!!!TO BE COMPLETED NEXT*/
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 5vw);
+    grid-gap: 15px;
+    max-width: 100%;
+}

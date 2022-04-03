@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dale Allen's Portfolio</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="grid-container">
+        <header class="grid-item item1">
+            <div>
+                <h1>DALE ALLEN</h1><br>
+                <!--SOLID LINE (no shade)-->
+                <hr noshade>
+                <h2>Front-End Developer</h2>
+            </div>
+        </header>
+        <nav class="grid-item item2">
+            <a class="navItem" href="#">About</a>
+            <a class="navItem" href="#">Portfolio</a>
+            <a class="navItem" href="#">CV</a>
+        </nav>
+        <div class="grid-item item3">
+            <h2>ABOUT ME</h2>
+            <p>I am extremely passionate in my pursuit of a career in Software and Web Development 
+            and am dedicated to my personal development, striving to continuously improve my skills through study, projects
+             and any hands-on experience. With this mindset, I have studied and applied fundamental knowledge of programming
+              and Markup languages such as HTML, CSS, Javascript, Jquery, frameworks such as React, as well as database 
+              languages such as SQL. I am dedicated to becoming a highly skilled developer who can offer much to any 
+              team/organisation. I am ready for any challenge which may lay ahead and have the experience to handle pressure 
+              in a fast-paced work environment.</p>
+        </div>
+
+        <!--GALLERY-->
+        <!-- !!!TO BE COMPLETED NEXT!!!
+        <div class="grid-item item4 gallery">
+            <figure class="gallery_item gallery_item_1">
+                <img src="images/certificates/html_css_cert.jpg" class="gallery_img">
+            </figure>
+            <figure class="gallery_item gallery_item_2">
+                <img src="images/certificates/js_cert.jpg" class="gallery_img">
+            </figure>
+            <figure class="gallery_item gallery_item_3">
+                <img src="images/certificates/python_cert.jpg" class="gallery_img">
+            </figure>
+            <figure class="gallery_item gallery_item_4">
+                <img src="images/certificates/microsoft_70_480_cert.jpg" class="gallery_img">
+            </figure>
+            <figure class="gallery_item gallery_item_5">
+                <img src="images/certificates/async_js_cert.jpg" class="gallery_img">
+            </figure>
+            <figure class="gallery_item gallery_item_6">
+                <img src="images/certificates/js_unit_testing.jpg" class="gallery_img">
+            </figure>
+            <figure class="gallery_item gallery_item_7">
+                <img src="images/certificates/how_to_code_cert.jpg" class="gallery_img">
+            </figure>
+        </div>
+        -->
+
+       <!-- <div class="grid-item item4">2</div>
+        <div class="grid-item item5">3</div>
+        <div class="grid-item item6">4</div>
+        <div class="grid-item item7">5</div>
+        <div class="grid-item item8">6</div> -->
+        <div class="grid-item item9">
+            <form action="/action_page.php" method="get" id="contactform">
+                <fieldset>
+                    <legend><h2>Contact Me</h2></legend>
+                    <label for="name" required>Name:</label><br>
+                    <input type="text" id="name" name="name"><br><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="subject">Subject:</label><br>
+                    <input type="text" id="subject" name="subject"><br><br>
+                    <label for="message" required>Message</label><br>
+                    <textarea 
+                        id="message" name="message" form="contactform" placeholder="Please write your message here" maxlength="500"></textarea><br>
+                    <input type="submit" value="submit" id="submit">
+                </fieldset>
+            </form>        
+        </div>
+        <div class="grid-item item10"> <img src=images/profilePic2.jpeg> </div>
+    </div>
+    
+</body>
+</html>
