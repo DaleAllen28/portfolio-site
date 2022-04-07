@@ -41,7 +41,7 @@ body,html {
                         ". header header header . ."
                         ". . . . . ."
                         "profilepic profilepic content content content content"
-                        ". . . gallery gallery ."
+                        "projects projects projects gallery gallery ."
                         ". . form form . ." ;
     
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -114,6 +114,9 @@ body,html {
 
   .item4 {
       grid-area: gallery;
+  }
+  .item5 {
+      grid-area: projects;
   }
 
   .item9 {
@@ -277,6 +280,7 @@ body,html {
         transition: 0.2s ease-in-out;
         max-height: 100%;
         justify-self: center;
+        border-radius: 0.5rem;
     }
 
     .gallery_img:hover {
@@ -298,6 +302,7 @@ body,html {
         box-sizing: border-box;
         width:100%;
         height: auto;
+        border-radius: 1rem;
     }
 
 .subtitle {

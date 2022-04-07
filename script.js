@@ -29,3 +29,32 @@ function showImage(imgs) {
         return
     };*/
 }
+
+/*OBJECT FOR PORTFOLIO PROJECTS*/
+const projects = {
+    tasklist: {
+        name: "To-do List",
+        languages: ["HTML","JS","CSS"],
+        links: {
+            deploy: "https://cheery-crepe-6a2055.netlify.app",
+            github: "https://github.com/DaleAllen28/To-do-List"
+        },
+        description: "A basic to do list with date/time, completion, edit and delete functionality"
+    },
+    stopwatch: {
+        name: "Stopwatch",
+        languages: ["HTML","JS", "CSS"],
+        links: {
+            github: "https://github.com/DaleAllen28/stopwatch"
+        },
+        description: "A simple stopwatch with minute display and basic lap functionality."
+    },
+    digitalclock: {
+        name: "Digital Clock",
+        languages: ["HTML", "JS", "CSS"],
+        links: {
+            github: "https://github.com/DaleAllen28/digitalclock"
+        },
+    }
+};
+
