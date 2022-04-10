@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dale Allen's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css"/>
     <script src="script.js"></script>
 </head>
@@ -19,9 +20,16 @@
             </div>
         </header>
         <nav class="grid-item item2">
-            <a class="navItem" href="#about-me">About</a>
-            <a class="navItem" href="#portfolio">Portfolio</a>
-            <a class="navItem" href="#contact">CV</a>
+            <img src=images/profilePic2.jpeg id="profilepic">
+            <a class="navItem pageLink" href="#about-me">ABOUT</a>
+            <a class="navItem pageLink" href="#portfolio">PORTFOLIO</a>
+            <a class="navItem pageLink" href="#contact">CONTACT</a>
+            <!--Social Media Icons-->
+            <!--Open links in new tab usin _blank target. Rel setting to prevent tabnapping-->
+            <a href="https://github.com/DaleAllen28" class="navItem fa fa-github" target="_blank" rel="noreferrer noopener"></a>
+            <a href="https://www.linkedin.com/in/dale-allen-1650b7236/" class="navItem fa fa-linkedin" target="_blank" rel="noreferrer noopener"></a>
+            <a class="navItem redirectLink" href="">Download CV</a>
+
         </nav>
         <div class="grid-item item3" id="about-me">
             <h2 class="subtitle">ABOUT ME</h2>
@@ -35,10 +43,15 @@
               in a fast-paced work environment.</p>
         </div>
 
-       <!-- <div class="grid-item item5 projects" id="portfolio">
-            <h2 id="portfolio title" class="subtitle">Projects</h2>
+        <div class="grid-item item5 projects" id="portfolio">
+            <h2 id="portfolio_title" class="subtitle">Projects</h2>
+
+            <img class="pro_disp_img" id="displayBox" src="images/portfolio/todolist/todolist.gif">
+            <img class="pro_img pro_img1" id="tasklist" src="images/portfolio/todolist/todolist.jpg" onclick="displayProject(this);">
+            <img class="pro_img pro_img2" id="digitalclock"src="images/portfolio/digitalclock/digitalclock.jpg" onclick="displayProject(this);">
+            <img class="pro_img pro_img3" id="stopwatch" src="images/portfolio/stopwatch/jsStopwatch.jpg" onclick="displayProject(this);">
+            <div class="description"><h3 id="pro_title">Title</h3><br><p id="pro_desc">Description example</p></div>
         </div>
-        -->
 
         <!--GALLERY-->
         <div class="grid-item item4 gallery" id="certicates">
@@ -90,7 +103,7 @@
                 </fieldset>
             </form>        
         </div>
-        <div class="grid-item item10"> <img src=images/profilePic2.jpeg> </div>
+        <!-- <div class="grid-item item10"> <img src=images/profilePic2.jpeg> </div> -->
     </div>
     
 </body>
