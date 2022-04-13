@@ -16,12 +16,16 @@ therefore giving access to the color variables globally*/
     /*Text Pallete*/
     --pink: #fcb6f0;
     --black: #000000;
+
+    /*Opacity Pallete*/
+    --opcoolgray: #edede996;
 }
 
 /*Global font-family*/
-html{
+html {
     font-family: Arial, Helvetica, sans-serif;
 }
+
 /*Remove outer margin of body*/
 body {
     margin:0;
@@ -37,11 +41,10 @@ body,html {
     /*Allow for grid display*/
     display: grid;
     /*6 column area*/
-    grid-template-areas:"navbar header header header header header"
-                        ". . . content content content"
-                        ". gallery gallery . . . "
-                        ". projects projects projects . ."
-                        ". . form form . ." ;
+    grid-template-areas:"navbar header header header header header header ."
+                        ". . content content content content content content"
+                        ". projects projects projects gallery gallery gallery ."
+                        ". . . form form . . ." ;
 
     /*
         grid-template-areas:"navbar navbar navbar navbar navbar navbar"
@@ -52,9 +55,9 @@ body,html {
                         ". . form form . ." ;
     */
     
-    grid-template-columns: 10% 2fr 2fr 2fr 2fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     /*row heights*/
-    grid-template-rows:100% 100% 100% 100% 100%; /*10% empty row allows centering of title*/
+    grid-template-rows:100% 100% 100% 100%; /*10% empty row allows centering of title*/
     
     /*
     grid-template-rows:10% 80% 10% 100% 100% 100%; /*10% empty row allows centering of title*/
@@ -168,6 +171,7 @@ body,html {
 
 .item4 {
       grid-area: gallery;
+      align-self: center; /*Aligns gallery centrally on the page*/
   }
 
 /*GALLERY GRID (subgrid_1)*/
@@ -176,11 +180,10 @@ body,html {
     box-sizing: border-box;
     grid-gap: 1%;
     max-width: 100%;
-    margin-top:10%;
-    margin-left: 7%;
-    height:max-content;
+    margin-top:7%;
+    height:min-content;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: min-content min-content min-content;
+    grid-template-rows: 10% 80% 10%;
     justify-content: space-evenly;
     align-content: space-between;
 }
@@ -249,13 +252,13 @@ body,html {
 
 .gallery_img:hover {
     width:100%;
-    height:95%;
+    height:100%;
     box-shadow: 0 0 10px var(--black);
 }
 
 .selectedImg {
     width:100%;
-    height:95%;
+    height:100%;
     box-shadow: 0 0 10px green;
     opacity: var(--black);
 }
@@ -265,30 +268,28 @@ body,html {
 .gallery_img_main {
     box-sizing: border-box;
     width:100%;
-    height: auto;
+    height: 100%;
     border-radius: 1rem;
 }
 
 /*----PROJECTS (SUBGRID 2)----*/
 .item5 {
       grid-area: projects;
+      align-self:center;
   }
 
   .projects {
       display: grid;
-      grid-template-columns: 25% 75% 25%;
-      /*grid-template-rows: min-content repeat(3, 1fr);*/
-      grid-template-areas: "title . ."
-                            "pro_img1 display_img description"
-                            "pro_img1 display_img description"
-                            "pro_img2 display_img description"
-                            "pro_img2 display_img description"
-                            "pro_img3 display_img description"
-                            "pro_img3 display_img languages";
-      padding: 5%;
+      grid-template-columns: 25% 75%;
+      grid-template-rows: min-content 1fr 1fr 1fr;
+      grid-template-areas: "title ."
+                            "pro_img1 info"
+                            "pro_img2 info"
+                            "pro_img3 info";
+      padding: 0%;
+      margin: 0%;
       grid-gap: 2%;
-      max-width: 100%;
-      height:max-content; /*stops height stretching*/
+      height: max-content; /*stops height stretching*/
   }
 
   /*Styling for all project images*/
@@ -314,6 +315,9 @@ body,html {
    /*   grid-column: 1/ span 1;
       grid-row: 1/ span 1; */
       text-align: left;
+      margin:0%;
+      padding:0%;
+      height: auto;
   }
 
   /*styling for display image*/
@@ -326,6 +330,7 @@ body,html {
       width: 100%;
       box-shadow: 0 0 1em var(--brown);
       border: 0.1em solid black;
+      position:relative;
   }
 
   .pro_img1 {
@@ -348,23 +353,116 @@ body,html {
 
   .description {
       grid-area: description;
-      padding: 0%;
+      padding: 2%;
       margin: 0%;
+      position: absolute;
+      width:100%;
+      height: min-content;
+      background-color: var(--opcoolgray);
+      left:0;
+      bottom:0%;
+      border: 0.1em solid #D5BDAF;
   }
 
-  .languages {
-      grid-area: languages;
-      display:grid;
-  }
+        #pro_title {
+            text-align: left;
+            margin:0;
+            padding: 0%;
+            font-size: 150%;
+            z-index: 2;
+        }
 
-  #pro_title {
-      text-align: left;
-      margin:0;
-  }
+        #pro_desc {
+            text-align: left;
+            margin:0%;
+            font-size: 100%;
+            z-index: 2;
 
-  #pro_desc {
-      text-align: left;
-  }
+        }
+
+        .languages {
+            grid-area: languages;
+            display:grid;
+            grid-template-areas: "lang1 lang2 lang3 . .";
+            grid-template-rows: auto;
+            z-index: 2;
+        }
+
+            .langitem {
+                border: 0.05em solid #000000;
+                height: 0.5em;
+                z-index: 2;
+            }
+
+            #lang1 {
+                grid-area: lang1;
+                background-color: blue;
+                border-top-left-radius: 3em;
+                border-bottom-left-radius: 3em;
+                z-index: 2;
+            }
+
+            #lang2 {
+                grid-area: lang2;
+                background-color: red;
+                z-index: 2;
+            }
+
+            #lang3 {
+                grid-area: lang3;
+                background-color: green;
+                border-top-right-radius: 3em;
+                border-bottom-right-radius: 3em;
+                z-index: 2;
+            }
+
+            .key {
+                grid-area: key;
+                padding-top: 0%;
+                padding-left: 0%;
+                list-style-position: inside;
+                text-align: left;
+                list-style-type:none;
+                display:inline-flex;
+                font-size: 80%;
+            } 
+            .keyItem {
+                padding:0%;
+                margin-left: 0%;
+                text-align:left;
+            }
+
+            /*Set margin for each li span item between its bullet point and following bulletpoint*/
+            .item5 .pro_info_cont ul.key li span {
+                margin-right: 1em;
+                margin-left: 0.5em;
+                text-align: left;
+            }
+
+            .key li::before {
+                font-weight: bold; 
+                display: inline-flex;
+                content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+
+            }
+            
+            /*Set colors for each bullet point*/
+            .key li:first-child::before {
+                color: blue; /* Change the color */
+            }
+
+            .key li:nth-child(2)::before {
+                color: red; /* Change the color */
+            }
+
+            .key li:nth-child(3)::before {
+                color: green; /* Change the color */
+            }
+
+        .pro_info_cont {
+            grid-area: info;
+            position:relative;
+        }
 
 /*FORM*/
 
