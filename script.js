@@ -42,9 +42,9 @@ const projects = {
         },
         description: "A basic to do list with date/time, completion, edit and delete functionality",
         percentages: {
-            HTML: 9.5,
-            JS: 55.9,
-            CSS: 34.6
+            HTML: "9.5%",
+            JS: "55.9%",
+            CSS: "34.6%"
         }
     },
     digitalclock: {
@@ -56,9 +56,9 @@ const projects = {
         },
         description: "Simple digital clock",
         percentages: {
-            HTML: 18.1,
-            JS: 65.9,
-            CSS: 16.0
+            HTML: "18.1%",
+            JS: "65.9%",
+            CSS: "16.0%"
         }
     },
     stopwatch: {
@@ -70,9 +70,9 @@ const projects = {
         },
         description: "A simple stopwatch with minute display and basic lap functionality.",
         percentages: {
-            HTML: 15.5,
-            JS: 67.1,
-            CSS: 17.4
+            HTML: "15.5%",
+            JS: "67.1%",
+            CSS: "17.4%"
         }
     } 
 };
@@ -82,6 +82,13 @@ const displayProject = (el) => {
     let dispBox = document.getElementById("displayBox");
     let projTitle = document.getElementById("pro_title");
     let projDescription = document.getElementById("pro_desc");
+    let langGrid = document.getElementById("langGrid");
+
+    let keyCont = document.getElementById("keyCont");
+
+    let jsKey = document.getElementById("key1");
+    let htmlKey = document.getElementById("key2");
+    let cssKey = document.getElementById("key3");
 
     let selectedProj = el.getAttribute("id");
 /*
@@ -105,16 +112,38 @@ const displayProject = (el) => {
             dispBox.src = el.src;
             projTitle.innerHTML = projects.tasklist.name;
             projDescription.innerHTML = projects.tasklist.description;
+            langGrid.style.gridTemplateColumns = projects.tasklist.percentages.JS + projects.tasklist.percentages.HTML + projects.tasklist.percentages.CSS;
+            /*jsKey.innerHTML = " " + projects.tasklist.percentages.JS + jsKey.innerHTML;
+            htmlKey.innerHTML = " " + projects.tasklist.percentages.HTML + htmlKey.innerHTML;
+            cssKey.innerHTML = " " + projects.tasklist.percentages.CSS + cssKey.innerHTML;*/
+
+            $(document).ready(function(){
+                $("#key1").html(" Javascript " + projects.tasklist.percentages.JS + " ");
+                $("#key2").html(" HTML " + projects.tasklist.percentages.HTML + " ");
+                $("#key3").html(" CSS " + projects.tasklist.percentages.CSS + " ");
+            });       
             break;
         case "digitalclock":
             dispBox.src = el.src;
             projTitle.innerHTML = projects.digitalclock.name;
             projDescription.innerHTML = projects.digitalclock.description;
+            langGrid.style.gridTemplateColumns = projects.digitalclock.percentages.JS + projects.digitalclock.percentages.HTML + projects.digitalclock.percentages.CSS;
+            $(document).ready(function(){
+                $("#key1").html(projects.digitalclock.percentages.JS + " Javascript");
+                $("#key2").html(projects.digitalclock.percentages.HTML + " HTML");
+                $("#key3").html(projects.digitalclock.percentages.CSS + " CSS");
+            });       
             break;
         case "stopwatch":
             dispBox.src = el.src;
             projTitle.innerHTML = projects.stopwatch.name;
             projDescription.innerHTML = projects.stopwatch.description;
+            langGrid.style.gridTemplateColumns = projects.stopwatch.percentages.JS + projects.stopwatch.percentages.HTML + projects.stopwatch.percentages.CSS;
+            $(document).ready(function(){
+                $("#key1").html(projects.stopwatch.percentages.JS + " Javascript");
+                $("#key2").html(projects.stopwatch.percentages.HTML + " HTML");
+                $("#key3").html(projects.stopwatch.percentages.CSS + " CSS");
+            });
             break;
     }
 };

@@ -7,6 +7,7 @@
     <title>Dale Allen's Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </head>
 <body>
@@ -49,10 +50,10 @@
             <div class="pro_info_cont">
                     <img class="pro_disp_img" id="displayBox" src="images/portfolio/todolist/todolist.gif">
                     <div class="description"><h3 id="pro_title">Title</h3><br><p id="pro_desc">Description example</p>
-                        <div class="languages">
+                        <div class="languages" id="langGrid">
                             <span class="langitem" id="lang1"></span><span class="langitem" id="lang2"></span><span class="langitem" id="lang3"></span>
                         </div>
-                        <ul class="key">
+                        <ul class="key" id="keyCont">
                             <li class="keyItem" id="key1"><span>Javascript</span></li><li class="keyItem" id="key2"><span>Html</span></li><li class="keyItem" id="key3"><span>Css</span></li>
                         </ul>
                     </div>
@@ -79,7 +80,7 @@
 
         <!--GALLERY-->
         <div class="grid-item item4 gallery" id="certicates">
-            <h2 id="gallery_title" class="subtitle">CERTIFICATES</h2>
+            <h2 id="gallery_title" class="subtitle">Certificates</h2>
            <!-- <div class="gallery_item "> -->
             <img src="images/certificates/html_css_cert.jpg" class="gallery_img_main gallery_item_1" id="gallery_img_display">
            <!-- </div> -->
@@ -111,7 +112,7 @@
         <div class="grid-item item9" id="contact">
             <form action="/action_page.php" method="get" id="contactform">
                 <fieldset>
-                    <legend><h2 class="subtitle">CONTACT ME</h2></legend>
+                    <legend><h2 class="subtitle">Send a message</h2></legend>
                     <label for="name" required>Name:</label><br>
                     <input type="text" id="name" name="name"><br><br>
 
