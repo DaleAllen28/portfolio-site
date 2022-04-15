@@ -83,6 +83,7 @@ const displayProject = (el) => {
     let projTitle = document.getElementById("pro_title");
     let projDescription = document.getElementById("pro_desc");
     let langGrid = document.getElementById("langGrid");
+    let projLink = document.getElementById("projLink");
 
     let keyCont = document.getElementById("keyCont");
 
@@ -118,10 +119,10 @@ const displayProject = (el) => {
             cssKey.innerHTML = " " + projects.tasklist.percentages.CSS + cssKey.innerHTML;*/
 
             $(document).ready(function(){
-                $("#key1").html(" Javascript " + projects.tasklist.percentages.JS + " ");
-                $("#key2").html(" HTML " + projects.tasklist.percentages.HTML + " ");
-                $("#key3").html(" CSS " + projects.tasklist.percentages.CSS + " ");
-            });       
+                $("#key1").html(" Javascript " + projects.tasklist.percentages.JS);
+                $("#key2").html(" HTML " + projects.tasklist.percentages.HTML);
+                $("#key3").html(" CSS " + projects.tasklist.percentages.CSS);
+            });
             break;
         case "digitalclock":
             dispBox.src = el.src;
@@ -129,9 +130,9 @@ const displayProject = (el) => {
             projDescription.innerHTML = projects.digitalclock.description;
             langGrid.style.gridTemplateColumns = projects.digitalclock.percentages.JS + projects.digitalclock.percentages.HTML + projects.digitalclock.percentages.CSS;
             $(document).ready(function(){
-                $("#key1").html(projects.digitalclock.percentages.JS + " Javascript");
-                $("#key2").html(projects.digitalclock.percentages.HTML + " HTML");
-                $("#key3").html(projects.digitalclock.percentages.CSS + " CSS");
+                $("#key1").html( " Javascript " + projects.digitalclock.percentages.JS);
+                $("#key2").html(" HTML " + projects.digitalclock.percentages.HTML);
+                $("#key3").html(" CSS " + projects.digitalclock.percentages.CSS);
             });       
             break;
         case "stopwatch":
@@ -140,9 +141,9 @@ const displayProject = (el) => {
             projDescription.innerHTML = projects.stopwatch.description;
             langGrid.style.gridTemplateColumns = projects.stopwatch.percentages.JS + projects.stopwatch.percentages.HTML + projects.stopwatch.percentages.CSS;
             $(document).ready(function(){
-                $("#key1").html(projects.stopwatch.percentages.JS + " Javascript");
-                $("#key2").html(projects.stopwatch.percentages.HTML + " HTML");
-                $("#key3").html(projects.stopwatch.percentages.CSS + " CSS");
+                $("#key1").html(" Javascript " + projects.stopwatch.percentages.JS);
+                $("#key2").html(" HTML " + projects.stopwatch.percentages.HTML);
+                $("#key3").html(" CSS " + projects.stopwatch.percentages.CSS);
             });
             break;
     }
