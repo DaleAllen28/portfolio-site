@@ -118,11 +118,50 @@ const displayProject = (el) => {
             htmlKey.innerHTML = " " + projects.tasklist.percentages.HTML + htmlKey.innerHTML;
             cssKey.innerHTML = " " + projects.tasklist.percentages.CSS + cssKey.innerHTML;*/
 
+            /*Change the html of each language key and add the percentage from the project object*/
             $(document).ready(function(){
                 $("#key1").html(" Javascript " + projects.tasklist.percentages.JS);
                 $("#key2").html(" HTML " + projects.tasklist.percentages.HTML);
                 $("#key3").html(" CSS " + projects.tasklist.percentages.CSS);
+
+                let deployLink = projects.tasklist.links.deploy;
+                let gitLink = projects.tasklist.links.github;
+
+              /*  var linkCont = $("<a>");
+
+                linkCont.attr("id","deployLink");
+
+                linkCont = $(link);
+
+                $(".description").append("<a>"+ link +"</a>");
+                */
+
+                if(deployLink){
+                    $("#deployLink").html("Deploy: " + deployLink);
+                    $("#deployLink").attr({
+                        href: deployLink,
+                        target:"_blank",
+                        rel: "noreferrer noopener"
+                    });
+                } else {
+                    $("#deployLink").html("");
+                    $("#deployLink").removeAttr("href target rel");
+                }
+
+                if(gitLink){
+                    $("#gitLink").html("<br>" + "Github: " + gitLink);
+                    $("#gitLink").attr({
+                        href: gitLink,
+                        target:"_blank",
+                        rel: "noreferrer noopener"
+                    });
+                }else {
+                    $("#gitLink").html("");
+                    $("#gitLink").removeAttr("href target rel");
+                }
+
             });
+
             break;
         case "digitalclock":
             dispBox.src = el.src;
@@ -133,6 +172,34 @@ const displayProject = (el) => {
                 $("#key1").html( " Javascript " + projects.digitalclock.percentages.JS);
                 $("#key2").html(" HTML " + projects.digitalclock.percentages.HTML);
                 $("#key3").html(" CSS " + projects.digitalclock.percentages.CSS);
+
+                let deployLink = projects.digitalclock.links.deploy;
+                let gitLink = projects.digitalclock.links.github;
+
+                
+                if(deployLink){
+                    $("#deployLink").html("Deploy:" + deployLink);
+                    $("#deployLink").attr({
+                        href: deployLink,
+                        target:"_blank",
+                        rel: "noreferrer noopener"
+                    });
+                } else {
+                    $("#deployLink").html("");
+                    $("#deployLink").removeAttr("href target rel");
+                }
+
+                if(gitLink){
+                    $("#gitLink").html("<br>" + "Github: " + gitLink);
+                    $("#gitLink").attr({
+                        href: gitLink,
+                        target:"_blank",
+                        rel: "noreferrer noopener"
+                    });
+                }else {
+                    $("#gitLink").html("");
+                    $("#gitLink").removeAttr("href target rel");
+                }
             });       
             break;
         case "stopwatch":
@@ -144,6 +211,33 @@ const displayProject = (el) => {
                 $("#key1").html(" Javascript " + projects.stopwatch.percentages.JS);
                 $("#key2").html(" HTML " + projects.stopwatch.percentages.HTML);
                 $("#key3").html(" CSS " + projects.stopwatch.percentages.CSS);
+
+                let deployLink = projects.stopwatch.links.deploy;
+                let gitLink = projects.stopwatch.links.github;
+
+                if(deployLink){
+                    $("#deployLink").html("Deploy: " + deployLink);
+                    $("#deployLink").attr({
+                        href: deployLink,
+                        target:"_blank",
+                        rel: "noreferrer noopener"
+                    });
+                } else {
+                    $("#deployLink").html("");
+                    $("#deployLink").removeAttr("href target rel");
+                }
+
+                if(gitLink){
+                    $("#gitLink").html("<br>" + "Github: " + gitLink);
+                    $("#gitLink").attr({
+                        href: gitLink,
+                        target:"_blank",
+                        rel: "noreferrer noopener"
+                    });
+                }else {
+                    $("#gitLink").html("");
+                    $("#gitLink").removeAttr("href target rel");
+                }
             });
             break;
     }
