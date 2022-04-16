@@ -159,7 +159,6 @@ const displayProject = (el) => {
                     $("#gitLink").html("");
                     $("#gitLink").removeAttr("href target rel");
                 }
-
             });
 
             break;
