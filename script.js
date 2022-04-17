@@ -31,6 +31,7 @@ function showImage(imgs) {
     };*/
 }
 
+
 /*OBJECT FOR PORTFOLIO PROJECT INFORMATION*/
 const projects = {
     tasklist: {
