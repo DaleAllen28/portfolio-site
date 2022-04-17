@@ -15,6 +15,7 @@ const imageChooser = () => {
     })
 });*/
 
+
 function showImage(imgs) {
     /*Varibale accesing where the image will be displayed using DOM*/
     let displayImg = document.getElementById("gallery_img_display");
