@@ -31,43 +31,42 @@ html {
 /*Remove outer margin of body*/
 body {
     margin:0;
+   /* font-size : clamp(0.5vw, 1vw, 1.5vw);*/
+   font-size: 1vw;
 }
 
 body,html {
     height: 100%;
-    background: linear-gradient(var(--coolgray), var(--midbrown), var(--graybrown));
+    background-color: linear-gradient(var(--coolgray), var(--midbrown), var(--graybrown));
 }
+
+/*Base font-size for secondary titles*/
+.subtitle {
+    font-size: 2vw;
+}
+
+/*Base font-size for body text*/
+.item3 .bodytext {
+    font-size: 1.5vw;
+}
+
+
 /*GRID STYLING*/
 .grid-container {
     /*Allow for grid display*/
     display: grid;
     /*6 column area*/
     grid-template-areas:"navbar header header header header header header header header header header ."
-                        ". . content content content content content content content content content content"
-                        ". projects projects projects projects projects . gallery gallery gallery gallery gallery"
-                        ". form form form form form form . . . . ." ;
-
-    /*
-        grid-template-areas:"navbar navbar navbar navbar navbar navbar"
-                        ". header header header . ."
-                        ". . . . . ."
-                        "profilepic profilepic content content content content"
-                        "projects projects projects gallery gallery ."
-                        ". . form form . ." ;
-    */
-    
+                        ". about about about about about about about about about about about"
+                        ". form form form form form form form form form form form" ;    
     grid-template-columns: 11% 1fr 1fr 1fr 1fr 1fr 1% 1fr 1fr 1fr 1fr 1fr;
     /*row heights*/
-    grid-template-rows:100% 100% 100% 100%; /*10% empty row allows centering of title*/
-    
-    /*
-    grid-template-rows:10% 80% 10% 100% 100% 100%; /*10% empty row allows centering of title*/
-
-    /*padding: 2%;*/
-    /*justify-content: space-between;*/
+    grid-template-rows: 100% min-content 100%; /*10% empty row allows centering of title*/    
     margin:0%;
     height: 100%;
     justify-content: space-between;
+    background-repeat: no-repeat;
+    grid-gap: 1%;
   }
 
   .grid-item {
@@ -86,17 +85,16 @@ body,html {
   .item1 div h1 {
       margin:0%;
       padding:0%;
-      font-size: 5rem;
+      font-size: 8vw;
   }
+
   .item1 div h2 {
       margin-top: 3%;
-
   }
 
   .item1 div hr {
-      width:66%;
+      width:50vw;/*Equal to title width*/
       float:left;
-      height: 0.1rem;
       color:#000000; 
       margin:auto;
   }
@@ -106,31 +104,23 @@ body,html {
 .item2 {
     grid-area: navbar;
     display: flex;
-    opacity: 100%;
-    flex-direction: column;
-    width:10%;
-    position:fixed;
+    flex-direction: column; /*Displays items vertically along the column*/
+    width:10%; /*10% of the page*/
+    position:fixed; /* Fixes position of nav to side when scrolled*/
     background-color: #000000;
     grid-template-rows: min-content;
-    height: 100%;
+    height: 100%; /*Column spans whole page height */
   }
-    .item2 img {
-        margin: 0%;
-        height: min-content;
-    }
 
-  /*Center link text*/
+  /*Center link text vertically*/
     .item2 a {
-        padding-top: 20%;
-        padding-bottom: 20%;
+        padding: 20%; /* Creates equal padding around nav text*/
     }
 
     .navItem { 
-        background-color: #000000;
-        text-decoration: none;
-        color: var(--brown);
-        transition: 0.2s ease-in;
-        font-size: 100%;
+        text-decoration: none; /*Removes link decoration*/
+        color: var(--brown); /*Text color*/
+        transition: 0.2s ease-in; /*Transition time for hover*/
     }
     .navItem:hover {
         background-color: var(--lightbrown);
@@ -139,65 +129,71 @@ body,html {
     }
 
     .pageLink {
-        font-size: 100%;
         font-weight: bolder;
     }
 
+    /*SOCIAL MEDIA ICONS*/
     .fa {
         font-size: 200%;
     }
 
+
     .redirectLink {
         font-style: italic;
+        font-weight: bolder;  
     }
 
 /*----CONTENT----*/
 
 .item3 {
       grid-area: content;
-      margin-top: 5%;
-      padding-left:5%;
-      padding-right: 5%;
-      
+      padding-left:1%;
+      padding-right: 3%;
   }
 
     .item3 p {
-      font-size: 1.2rem;
       text-align: justify;
     }
 
     .item3 h2 {
-      text-align: center;
+      text-align: left;
     }
 
 .item4 {
       grid-area: gallery;
-      align-self: center; /*Aligns gallery centrally on the page*/
   }
+
+ 
+
+.about_container {
+      grid-area: about;
+      display: grid;
+      grid-template-areas: "content content content content content content content content content content content content"
+                            "projects projects projects projects projects . . gallery gallery gallery gallery gallery"
+                        ;
+      grid-template-rows: min-content min-content;
+      grid-template-columns: repeat(5, 1fr) repeat(2, min-content) repeat(5, 1fr);
+      grid-gap: 1%;
+      padding-left: 1%;
+      padding-right: 1%;
+                    }
 
 /*GALLERY GRID (subgrid_1)*/
 .gallery {
     display: grid;
-    box-sizing: border-box;
-    max-width: 100%;
-    margin-top:7%;
-    height:min-content;
+    height:100%;
+    width: 95%;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: min-content min-content 1% min-content;
-    justify-content: space-evenly;
-    align-content: space-between;
-    padding: 2%;
-    justify-self: flex-end;
+    grid-template-rows: minmax(min-content, 1vw) 6fr 1fr;
+    grid-gap: 2%;
 }
 
 #gallery_title {
     grid-column: 1/span 7;
     grid-row: 1/ span 1;
-    height: min-content;
     margin: 0%;
     text-align: left;
     padding: 0%;
-    font-size: 1.5em;
 }
 
 .gallery_item_1 {
@@ -207,37 +203,37 @@ body,html {
 
 .gallery_item_2 {
     grid-column: 1 / span 1;
-    grid-row: 4 / span 1;
+    grid-row: 3 / span 1;
 }
 
 .gallery_item_3 {
     grid-column: 2 / span 1;
-    grid-row: 4 / span 1;
+    grid-row: 3 / span 1;
 }
 
 .gallery_item_4 {
     grid-column: 3 / span 1;
-    grid-row: 4 / span 1;
+    grid-row: 3 / span 1;
 }
 
 .gallery_item_5 {
     grid-column: 4 / span 1;
-    grid-row: 4 / span 1;
+    grid-row: 3 / span 1;
 }
 
 .gallery_item_6 {
     grid-column: 5 / span 1;
-    grid-row: 4 / span 1;
+    grid-row: 3 / span 1;
 }
 
 .gallery_item_7 {
     grid-column: 6 / span 1;
-    grid-row: 4 / span 1;
+    grid-row: 3 / span 1;
 }
 
 .gallery_item_8 {
     grid-column: 7 / span 1;
-    grid-row: 4 / span 1;
+    grid-row: 3 / span 1;
 }
 
 .cc_cert {
@@ -246,7 +242,6 @@ body,html {
 
 .gallery_img {
     width:90%;
-    min-height: 90%;
     border: 2px solid black;
     transition: 0.2s ease-in-out;
     max-height: 95%;
@@ -270,7 +265,6 @@ body,html {
 
 /*SET LARGE GALLERY IMAGE TO FILL GRID*/
 .gallery_img_main {
-    box-sizing: border-box;
     width:100%;
     height: 100%;
     border-radius: 1rem;
@@ -286,15 +280,15 @@ body,html {
   .projects {
       display: grid;
       grid-template-columns: 25% 75%;
-      grid-template-rows: min-content 1fr 1fr 1fr;
+      grid-template-rows: minmax(min-content, 1vw) min-content min-content min-content;
       grid-template-areas: "title ."
                             "pro_img1 info"
                             "pro_img2 info"
                             "pro_img3 info";
-      padding: 2%;
       margin: 0%;
+      height: 100%; /*stops height stretching*/
       grid-gap: 2%;
-      height: max-content; /*stops height stretching*/
+      padding: 2%;
   }
 
   /*Styling for all project images*/
@@ -322,20 +316,17 @@ body,html {
       text-align: left;
       margin:0%;
       padding:0%;
-      height: auto;
   }
 
   /*styling for display image*/
   .pro_disp_img {
       grid-area: display_img;
-     /* grid-column: 2/ span 1;
-      grid-row: 2/ span 3; */
       background-color: #000000;
       height: 100%;
       width: 100%;
       box-shadow: 0 0 1em var(--brown);
       border: 0.1em solid black;
-      position:relative;
+     /* position:relative;*/
   }
 
   .pro_img1 {
@@ -359,6 +350,8 @@ body,html {
   .description {
       grid-area: description;
       padding: 2%;
+      padding-bottom: 1%;
+      padding-top: 1%;
       margin: 0%;
       position: absolute;
       width:100%;
@@ -373,38 +366,35 @@ body,html {
             text-align: left;
             margin:0;
             padding: 0%;
-            font-size: 150%;
-            z-index: 2;
+            font-size: 1.5vw;
         }
 
         #pro_desc {
             text-align: left;
             margin:0%;
-            font-size: 100%;
-            z-index: 2;
-
+            font-size: 1vw;
         }
 
+        /*Grid for language display*/
         .languages {
             grid-area: languages;
             display:grid;
             grid-template-areas: "lang1 lang2 lang3"
                                 "key key key";
             grid-template-rows: auto;
-            z-index: 2;
         }
 
             .langitem {
                 border: 0.05em solid #000000;
                 height: 0.5em;
-                z-index: 2;
             }
 
             #lang1 {
                 grid-area: lang1;
                 background-color: blue;
-                border-top-left-radius: 3em;
-                border-bottom-left-radius: 3em;
+                /*No border on right side as it connects to lang2 grid-area*/
+                border-top-left-radius: 3em;/*Adds curve to top left border*/
+                border-bottom-left-radius: 3em;/*Adds curve to bottom left border*/
                 z-index: 2;
             }
 
@@ -433,7 +423,7 @@ body,html {
                 font-size: 80%;
                 width:100%;
             } 
-            
+
             .keyItem {
                 padding:0%;
                 text-align:left;
@@ -477,38 +467,36 @@ body,html {
 .item9 {
     grid-area: form;
     align-self: center;
+    width: 97%;
+    height: 100%;
+    padding-top: 10%;
 }
 
 #contactform fieldset {
-    display:grid;
     border-radius: 1rem;
     text-align: left;
     border:none;
-    justify-self: center;
-    align-self: center;
 }
 
 #contactform fieldset >* {
-    border-radius: 1rem;
-    border: none;
-    justify-self: left;
-    width:70%;
+    border-radius: 1rem; /* Rounded input box*/
+    width:100%;
 }
 
 #contactform fieldset > input {
-    padding: 2.5%;
-    border: 0.1rem solid var(--brown);
+    padding: 1.5%;
+    border: 0.15vw solid var(--brown);
     background-color: rgb(255, 255, 255);    
 }
 
 #contactform fieldset > input:focus-visible {
-    border: 0.1rem solid var(--pink);
+    border: 0.15vw solid var(--pink);
 }
 
 #contactform fieldset > textarea {
-    padding: 2%;
-    height:100%;
-    border: 0.1rem solid var(--brown);
+    padding: 1.5%;
+    height:20vw;
+    border: 0.15vw solid var(--brown);
     background-color: white;
 }
 
@@ -526,6 +514,44 @@ body,html {
     box-shadow: 0 0 5px var(--pink);
 }
 
-.subtitle {
-    font-size: 2rem;
-}
+
+
+/*MEDIA QUERIES*/
+
+/*Tablet and smaller*/
+@media (max-width: 768px) {
+    
+    /*increased size of h1 fonts for more visibility on smaller screens*/
+    h1 {
+       font-size: 7vw;
+    }
+    
+    /*increased size of subtitles for more visibility on smaller screens*/
+    .subtitle {
+       font-size: 3vw;
+    }
+
+    /*Rearrange grid elements projects and gallery into single rows for improved visibilty*/
+    .grid-container .about_container {
+        grid-area: about;
+        display: grid;
+        max-width: 100%;
+        grid-template-areas: "content content content content content content content content content content content content"
+                              ". projects projects projects projects projects projects projects projects projects projects ."
+                              ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery ."
+                          ;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: repeat(5, 1fr) repeat(2, min-content) repeat(5, 1fr);
+        grid-gap: 2%;
+        height: 100%;
+                      }
+
+    .item3 .bodytext {
+        font-size: 2.5vw;
+    }
+
+    .gallery {
+        width: 100%;
+    }
+ 
+ }
