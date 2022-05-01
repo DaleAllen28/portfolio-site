@@ -185,7 +185,7 @@ body,html {
     width: 95%;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: minmax(min-content, 1vw) 6fr 1fr;
-    grid-gap: 2%;
+    grid-gap: 1%;
 }
 
 #gallery_title {
@@ -288,7 +288,7 @@ body,html {
       margin: 0%;
       height: 100%; /*stops height stretching*/
       grid-gap: 2%;
-      padding: 2%;
+      padding-left: 2%;
   }
 
   /*Styling for all project images*/
@@ -469,7 +469,9 @@ body,html {
     align-self: center;
     width: 97%;
     height: 100%;
-    padding-top: 10%;
+    margin-top: 20%;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
 }
 
 #contactform fieldset {
@@ -519,7 +521,7 @@ body,html {
 /*MEDIA QUERIES*/
 
 /*Tablet and smaller*/
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     
     /*increased size of h1 fonts for more visibility on smaller screens*/
     h1 {
@@ -531,20 +533,22 @@ body,html {
        font-size: 3vw;
     }
 
+    
+
     /*Rearrange grid elements projects and gallery into single rows for improved visibilty*/
     .grid-container .about_container {
         grid-area: about;
         display: grid;
         max-width: 100%;
         grid-template-areas: "content content content content content content content content content content content content"
-                              ". projects projects projects projects projects projects projects projects projects projects ."
-                              ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery ."
+                              "projects projects projects projects projects projects projects projects projects projects projects ."
+                              "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery ."
                           ;
         grid-template-rows: auto auto auto;
         grid-template-columns: repeat(5, 1fr) repeat(2, min-content) repeat(5, 1fr);
         grid-gap: 2%;
         height: 100%;
-                      }
+    }
 
     .item3 .bodytext {
         font-size: 2.5vw;
@@ -553,5 +557,49 @@ body,html {
     .gallery {
         width: 100%;
     }
+
+    .item9 {
+        width: 100%;
+        margin-top: 30%;
+    }
+
+    .gallery{
+        margin-top: 5%;
+    }
  
  }
+
+ @media (max-width: 768px) {
+
+    .grid-container {
+        /*Allow for grid display*/
+        display: grid;
+        /*6 column area*/
+        grid-template-areas:
+                            ". header header header header header header header header header header ."
+                            ". about about about about about about about about about about ."
+                            ". form form form form form form form form form form ." ;
+        grid-gap: 0%;
+        padding-left: 0%;
+        padding-right: 0%;        
+    }
+
+      .item2 {
+        display: none;
+    }
+
+      .item3 {
+        grid-area: content;
+        padding-left:3%;
+        padding-right: 0%;
+    }
+
+      .grid-container .about_container {
+        max-width: 100%;
+        grid-template-areas: "content content content content content content content content content content content content"
+                              "projects projects projects projects projects projects projects projects projects projects projects projects"
+                              "gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery"
+                          ;
+    }
+
+  } 
