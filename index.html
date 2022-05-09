@@ -5,72 +5,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dale Allen's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </head>
 <body>
     <div class="grid-container">
         <header class="grid-item item1">
             <div>
-                <h1>DALE ALLEN</h1><br>
+                <h1 class="title">DALE ALLEN</h1><br>
                 <!--SOLID LINE (no shade)-->
-                <hr noshade>
+                <hr noshade class="line">
                 <h2 class="subtitle">Front-End Developer</h2>
             </div>
         </header>
         <nav class="grid-item item2">
-            <a class="navItem" href="#about-me">About</a>
-            <a class="navItem" href="#portfolio">Portfolio</a>
-            <a class="navItem" href="#contact">CV</a>
+            <img src=images/profilePic2.jpeg id="profilepic">
+            <a class="navItem pageLink" href="#about-me">ABOUT</a>
+            <a class="navItem pageLink" href="#portfolio">PORTFOLIO</a>
+            <a class="navItem pageLink" href="#contact">CONTACT</a>
+            <!--Social Media Icons-->
+            <!--Open links in new tab using _blank target. Rel setting to prevent tabnapping-->
+            <a href="https://github.com/DaleAllen28" class="navItem fa fa-github" target="_blank" rel="noreferrer noopener"></a>
+            <a href="https://www.linkedin.com/in/dale-allen-1650b7236/" class="navItem fa fa-linkedin" target="_blank" rel="noreferrer noopener"></a>
+            <a class="navItem redirectLink" href="">Download CV</a>
+
         </nav>
-        <div class="grid-item item3" id="about-me">
-            <h2 class="subtitle">ABOUT ME</h2>
-            <hr noshade>
-            <p>I am extremely passionate in my pursuit of a career in Software and Web Development 
-            and am dedicated to my personal development, striving to continuously improve my skills through study, projects
-             and any hands-on experience. With this mindset, I have studied and applied fundamental knowledge of programming
-              and Markup languages such as HTML, CSS, Javascript, Jquery, frameworks such as React, as well as database 
-              languages such as SQL. I am dedicated to becoming a highly skilled developer who can offer much to any 
-              team/organisation. I am ready for any challenge which may lay ahead and have the experience to handle pressure 
-              in a fast-paced work environment.</p>
+
+        <div class="about_container">
+
+            <div class="grid-item item3" id="about-me">
+                <h2 class="subtitle">ABOUT ME</h2>
+                <hr noshade class="line">
+                <p class="bodytext">I am extremely passionate in my pursuit of a career in Software and Web Development 
+                and am dedicated to my personal development, striving to continuously improve my skills through study, projects
+                and any hands-on experience. With this mindset, I have studied and applied fundamental knowledge of programming
+                and Markup languages such as HTML, CSS, Javascript, Jquery, frameworks such as React, as well as database 
+                languages such as SQL. I am dedicated to becoming a highly skilled developer who can offer much to any 
+                team/organisation. I am ready for any challenge which may lay ahead and have the experience to handle pressure 
+                in a fast-paced work environment.</p>
+            </div>
+
+            <div class="grid-item item5 projects" id="portfolio">
+                <h2 id="portfolio_title" class="subtitle">Projects</h2>
+
+                <div class="pro_info_cont">
+                        <img class="pro_disp_img" id="displayBox" src="images/portfolio/todolist/todolist.gif">
+                        <div class="description"><h3 id="pro_title">Title</h3><br><p id="pro_desc">Description example</p>
+                            <div class="languages" id="langGrid">
+                                <span class="langitem" id="lang1"></span><span class="langitem" id="lang2"></span><span class="langitem" id="lang3"></span>
+                            </div>
+                            <ul class="key" id="keyCont">
+                                <li class="keyItem" id="key1"><span>Javascript</span></li><li class="keyItem" id="key2"><span>Html</span></li><li class="keyItem" id="key3"><span>Css</span></li>
+                            </ul>
+                            <a id="deployLink"></a>
+                            <a id="gitLink"></a>
+                        </div>
+                </div>
+                
+                <img class="pro_img pro_img1" id="tasklist" src="images/portfolio/todolist/todolist.jpg" onclick="displayProject(this);">
+                <img class="pro_img pro_img2" id="digitalclock"src="images/portfolio/digitalclock/digitalclock.jpg" onclick="displayProject(this);">
+                <img class="pro_img pro_img3" id="stopwatch" src="images/portfolio/stopwatch/jsStopwatch.jpg" onclick="displayProject(this);">
+            </div>
+
+            <!--GALLERY-->
+            <div class="grid-item item4 gallery" id="certificates">
+                <h2 id="gallery_title" class="subtitle">Certificates</h2>
+                <img src="images/certificates/html_css_cert.jpg" class="gallery_img_main gallery_item_1" id="gallery_img_display">
+                <img src="images/certificates/html_css_cert.jpg" class="gallery_img gallery_item_2" onclick="showImage(this);">
+                <img src="images/certificates/js_cert.jpg" class="gallery_img gallery_item_3" onclick="showImage(this);">
+                <img src="images/certificates/python_cert.jpg" class="gallery_img gallery_item_4" onclick="showImage(this);">
+                <img src="images/certificates/microsoft_70_480_cert.jpg" class="gallery_img gallery_item_5" onclick="showImage(this);">
+                <img src="images/certificates/async_js_cert.jpg" class="gallery_img gallery_item_6 cc_cert" onclick="showImage(this);">
+                <img src="images/certificates/js_unit_testing.jpg" class="gallery_img gallery_item_7 cc_cert" onclick="showImage(this);">
+                <img src="images/certificates/how_to_code_cert.jpg" class="gallery_img gallery_item_8 cc_cert" onclick="showImage(this);">
+            </div>
+
         </div>
 
-        <!--GALLERY-->
-        <div class="grid-item item4 gallery" id="portfolio">
-            <h2 id="gallery_title" class="subtitle">CERTIFICATES</h2>
-           <!-- <div class="gallery_item "> -->
-            <img src="images/certificates/html_css_cert.jpg" class="gallery_img_main gallery_item_1" id="gallery_img_display">
-           <!-- </div> -->
-            <img src="images/certificates/html_css_cert.jpg" class="gallery_img gallery_item_2" onclick="showImage(this);">
-           <!-- <figure class="gallery_item gallery_item_2"> -->
-            <img src="images/certificates/js_cert.jpg" class="gallery_img gallery_item_3" onclick="showImage(this);">
-           <!-- </figure> -->
-           <!-- <figure class="gallery_item gallery_item_3"> -->
-            <img src="images/certificates/python_cert.jpg" class="gallery_img gallery_item_4" onclick="showImage(this);">
-           <!-- </figure> -->
-           <!-- <figure class="gallery_item gallery_item_4"> -->
-            <img src="images/certificates/microsoft_70_480_cert.jpg" class="gallery_img gallery_item_5" onclick="showImage(this);">
-           <!-- </figure> -->
-           <!-- <figure class="gallery_item gallery_item_5"> -->
-            <img src="images/certificates/async_js_cert.jpg" class="gallery_img gallery_item_6 cc_cert" onclick="showImage(this);">
-           <!-- </figure> -->
-           <!-- <figure class="gallery_item gallery_item_6"> -->
-            <img src="images/certificates/js_unit_testing.jpg" class="gallery_img gallery_item_7 cc_cert" onclick="showImage(this);">
-           <!-- </figure> -->
-           <!-- <figure class="gallery_item gallery_item_7"> -->
-            <img src="images/certificates/how_to_code_cert.jpg" class="gallery_img gallery_item_8 cc_cert" onclick="showImage(this);">
-           <!-- </figure> -->
-        </div>
-
-       <!-- 
-        <div class="grid-item item5">3</div>
-        <div class="grid-item item6">4</div>
-        <div class="grid-item item7">5</div>
-        <div class="grid-item item8">6</div> -->
         <div class="grid-item item9" id="contact">
-            <form action="/action_page.php" method="get" id="contactform">
+            <form action="results.html" method="GET" id="contactform">
                 <fieldset>
-                    <legend><h2 class="subtitle">CONTACT ME</h2></legend>
+                    <legend><h2 class="subtitle">Send a message</h2>
+                            <hr noshade class="line">
+                    </legend>
                     <label for="name" required>Name:</label><br>
                     <input type="text" id="name" name="name"><br><br>
 
@@ -86,7 +105,6 @@
                 </fieldset>
             </form>        
         </div>
-        <div class="grid-item item10"> <img src=images/profilePic2.jpeg> </div>
     </div>
     
 </body>
