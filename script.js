@@ -29,7 +29,8 @@ const projects = {
         name: "Digital Clock",
         languages: ["HTML", "JS", "CSS"],
         links: {
-            github: "https://github.com/DaleAllen28/digitalclock"
+            github: "https://github.com/DaleAllen28/digitalclock",
+            deploy: "https://fabulous-gingersnap-508693.netlify.app/"
         },
         description: "Simple digital clock",
         percentages: {
@@ -43,7 +44,8 @@ const projects = {
         name: "Stopwatch",
         languages: ["HTML","JS", "CSS"],
         links: {
-            github: "https://github.com/DaleAllen28/stopwatch"
+            github: "https://github.com/DaleAllen28/stopwatch",
+            deploy: "https://verdant-bunny-8047eb.netlify.app/"
         },
         description: "A simple stopwatch with minute display and basic lap functionality.",
         percentages: {
