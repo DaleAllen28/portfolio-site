@@ -18,7 +18,7 @@ therefore giving access to the color variables globally*/
     --black: #000000;
 
     /*Opacity Pallete*/
-    --opcoolgray: #edede996;
+    --opcoolgray: #edede9d4;
 
 
 }
@@ -37,7 +37,6 @@ body {
 
 body,html {
     height: 100%;
-    background-color: linear-gradient(var(--coolgray), var(--midbrown), var(--graybrown));
 }
 
 /*Base font-size for secondary titles*/
@@ -163,8 +162,6 @@ body,html {
       grid-area: gallery;
   }
 
- 
-
 .about_container {
       grid-area: about;
       display: grid;
@@ -181,7 +178,7 @@ body,html {
 /*GALLERY GRID (subgrid_1)*/
 .gallery {
     display: grid;
-    height:100%;
+    height:95%;
     width: 95%;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: minmax(min-content, 1vw) 6fr 1fr;
@@ -269,6 +266,7 @@ body,html {
     height: 100%;
     border-radius: 1rem;
     padding: 0.5%;
+    border: 4px solid black;
 }
 
 /*----PROJECTS (SUBGRID 2)----*/
@@ -298,6 +296,7 @@ body,html {
     width: 100%;
     height: 100%;
     box-shadow: 0 0 0.8em var(--brown);
+    border-radius: 2vw;
   }
 
   .pro_img:hover {
@@ -326,6 +325,8 @@ body,html {
       width: 100%;
       box-shadow: 0 0 1em var(--brown);
       border: 0.1em solid black;
+      border-radius: 2vw;
+      display:none;
      /* position:relative;*/
   }
 
@@ -360,6 +361,10 @@ body,html {
       left:0;
       bottom:0%;
       border: 0.1em solid #D5BDAF;
+      border-bottom-left-radius: 2vw;
+      border-bottom-right-radius: 2vw;
+      display: none;
+
   }
 
         #pro_title {
@@ -565,6 +570,43 @@ body,html {
 
     .gallery{
         margin-top: 5%;
+    }
+
+    .projects{
+        padding-left: 0%;
+    }
+
+    /*Alter project description*/
+
+    #pro_title {
+        font-size: 3vw;
+    }
+
+    #pro_desc {
+        font-size: 2vw;
+    }
+
+    .keyItem {
+        font-size: 2vw;
+    }
+    #deployLink {
+        font-size: 2vw;
+    }
+    #gitLink {
+        font-size: 2vw;
+    }
+
+    #lang1 {
+        height: 0.8vw;
+
+    }
+
+    #lang2 {
+        height: 0.8vw;
+    }
+
+    #lang3 {
+        height: 0.8vw;
     }
  
  }

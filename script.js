@@ -1,34 +1,9 @@
-/*let largeDisplay = document.querySelector(".gallery_img_main");*/
-/*const smallImage = document.querySelectorAll(".gallery_img");*/
-
-/*smallImage.addEventListener("click", imageChooser);
-
-const imageChooser = () => {
-    const newImage = smallImage.src;
-
-    certDisplay = newImage.src;
-}*/
-
-/*Array.from(document.querySelectorAll(".gallery_img")).forEach(item => {
-    item.addEventListener("click", event => {
-        largeDisplay.src = event.target.src;
-    })
-});*/
-
-
 function showImage(imgs) {
     /*Varibale accesing where the image will be displayed using DOM*/
     let displayImg = document.getElementById("gallery_img_display");
     /*Set src of displayImg variable to the same as the clicked images(imgs) src which is passed in as an argument*/
     displayImg.src = imgs.src;
 
-    /*let selectedImg = imgs;*/
-
-    /*if(displayImg.src === selectedImg.src) {
-        selectedImg.classList.add('selectedImg')
-    } else {
-        return
-    };*/
 }
 
 
@@ -94,31 +69,20 @@ const displayProject = (el) => {
     let cssKey = document.getElementById("key3");
 
     let selectedProj = el.getAttribute("id");
-/*
-    if(selectedProj == projects.tasklist.id) {
-        dispBox.src = el.src;
-        projTitle.innerHTML = projects.tasklist.name;
-        projDescription.innerHTML = projects.tasklist.description;
-    } else if (selectedProj == projects.digitalclock.id) {
-        dispBox.src = el.src;
-        projTitle.innerHTML = projects.digitalclock.name;
-        projDescription.innerHTML = projects.digitalclock.description;
-    } else if (selectedProj == projects.stopwatch.id){
-        dispBox.src = el.src;
-        projTitle.innerHTML = projects.stopwatch.name;
-        projDescription.innerHTML = projects.stopwatch.description;
-    } */
+
+    let description = document.getElementById("description")
 
     switch (selectedProj)
     {
         case "tasklist":
-            dispBox.src = el.src;
-            projTitle.innerHTML = projects.tasklist.name;
+            /*Show hidden main projects display on click*/
+            description.style.display = "block";
+            dispBox.style.display = "block";
+
+            dispBox.src = el.src; /*Change image src to that of the elected proj*/
+            projTitle.innerHTML = projects.tasklist.name; /*Set title as particular project name from project object*/
             projDescription.innerHTML = projects.tasklist.description;
             langGrid.style.gridTemplateColumns = projects.tasklist.percentages.JS + projects.tasklist.percentages.HTML + projects.tasklist.percentages.CSS;
-            /*jsKey.innerHTML = " " + projects.tasklist.percentages.JS + jsKey.innerHTML;
-            htmlKey.innerHTML = " " + projects.tasklist.percentages.HTML + htmlKey.innerHTML;
-            cssKey.innerHTML = " " + projects.tasklist.percentages.CSS + cssKey.innerHTML;*/
 
             /*Change the html of each language key and add the percentage from the project object*/
             $(document).ready(function(){
@@ -129,14 +93,6 @@ const displayProject = (el) => {
                 let deployLink = projects.tasklist.links.deploy;
                 let gitLink = projects.tasklist.links.github;
 
-              /*  var linkCont = $("<a>");
-
-                linkCont.attr("id","deployLink");
-
-                linkCont = $(link);
-
-                $(".description").append("<a>"+ link +"</a>");
-                */
 
                 if(deployLink){
                     $("#deployLink").html("Deploy: " + deployLink);
@@ -165,6 +121,10 @@ const displayProject = (el) => {
 
             break;
         case "digitalclock":
+            /*Show hidden main projects display on click*/
+            description.style.display = "block";
+            dispBox.style.display = "block";
+
             dispBox.src = el.src;
             projTitle.innerHTML = projects.digitalclock.name;
             projDescription.innerHTML = projects.digitalclock.description;
@@ -204,6 +164,9 @@ const displayProject = (el) => {
             });       
             break;
         case "stopwatch":
+            /*Show hidden main projects display on click*/
+            description.style.display = "block";
+            dispBox.style.display = "block";
             dispBox.src = el.src;
             projTitle.innerHTML = projects.stopwatch.name;
             projDescription.innerHTML = projects.stopwatch.description;
